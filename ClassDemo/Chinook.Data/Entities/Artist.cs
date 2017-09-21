@@ -11,8 +11,13 @@ namespace Chinook.Data.Entities
         [Key]
         public int ArtistId { get; set; }
 
-        [StringLength(120)]
+        [StringLength(120, ErrorMessage ="Name is limited to 120 Characters")]
         public string Name { get; set; }
+
+        //navigation properties
+        //to a child
+
+        public virtual ICollection<Album> Albums { get; set; }
 
     }
 }
